@@ -35,7 +35,7 @@ export default function LoginPage() {
 
       {/* Right side form */}
       <div className="w-1/2 flex items-center justify-center bg-white">
-        <div className="bg-white p-8 rounded-lg shadow-md w-96">
+        <div className="bg-white/80 backdrop-blur-md p-8 rounded-lg shadow-md w-96">
           <img src="/logoLogin.png" alt="Login Logo" className="w-20 mx-auto mb-4" />
           <h1 className="text-2xl font-bold mb-4 text-center text-black">Login to your Account</h1>
           <h2 className="text-sm font-light text-center text-gray-400 mb-16">

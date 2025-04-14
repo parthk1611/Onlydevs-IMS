@@ -19,7 +19,7 @@ export default function Dashboard() {
       return; // Exit if token is not found
     }
 
-    fetch("http://localhost:5000/api/inventory", {
+    fetch(`${process.env.NEXT_PUBLIC_API_URL}/inventory`, {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${token}`,  // Include token in Authorization header

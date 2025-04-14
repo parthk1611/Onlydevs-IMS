@@ -26,7 +26,7 @@ export default function InventoryPage() {
     }
 
     axios
-      .get("http://localhost:5000/api/inventory", {
+      .get(`${process.env.NEXT_PUBLIC_API_URL}/inventory`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -48,7 +48,7 @@ export default function InventoryPage() {
   const handleAddItem = () => {
     const token = localStorage.getItem("token");
     axios
-      .post("http://localhost:5000/api/inventory", newItemData, {
+      .post(`${process.env.NEXT_PUBLIC_API_URL}/inventory`, newItemData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -121,7 +121,7 @@ export default function InventoryPage() {
                     onClick={() => {
                       const token = localStorage.getItem("token");
                       axios
-                        .delete(`http://localhost:5000/api/inventory/${item._id}`, {
+                        .delete(`${process.env.NEXT_PUBLIC_API_URL}/inventory/${item._id}`, {
                           headers: {
                             Authorization: `Bearer ${token}`,
                           },
@@ -331,7 +331,7 @@ export default function InventoryPage() {
                         onClick={() => {
                           const token = localStorage.getItem("token");
                           axios
-                            .put(`http://localhost:5000/api/inventory/${editItem._id}`, editedItemData, {
+                            .put(`${process.env.NEXT_PUBLIC_API_URL}/inventory/${editItem._id}`, editedItemData, {
                               headers: {
                                 Authorization: `Bearer ${token}`,
                               },

@@ -1,5 +1,4 @@
-export const API_URL = "http://localhost:5000/api/auth";
-
+export const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 // Login function
 export const loginUser = async (email, password) => {
   const res = await fetch(`${API_URL}/login`, {
