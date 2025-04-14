@@ -32,7 +32,7 @@ export default function SignupPage() {
         }}
       ></div>
       <div className="w-1/2 flex items-center justify-center bg-white">
-        <div className="bg-white p-8 rounded-lg shadow-md w-96">
+        <div className="bg-white/80 backdrop-blur-md p-8 rounded-lg shadow-md w-96">
           <img
             src="/logoLogin.png"
             alt="Signup Logo"
