@@ -1,7 +1,7 @@
 export const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api";
 // Login function
 export const loginUser = async (email, password) => {
-  const res = await fetch(`${API_URL}/login`, {
+  const res = await fetch(`${API_URL}/auth/login`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ email, password }),
@@ -11,7 +11,7 @@ export const loginUser = async (email, password) => {
 
 // Register function
 export const registerUser = async (username, email, password) => {
-  const res = await fetch(`${API_URL}/register`, {
+  const res = await fetch(`${API_URL}/auth/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ username, email, password }),
@@ -21,7 +21,7 @@ export const registerUser = async (username, email, password) => {
 
 // Delete Inventory Item
 export const deleteItem = async (itemId, token) => {
-  const res = await fetch(`http://localhost:5000/api/inventory/${itemId}`, {
+  const res = await fetch(`${API_URL.replace("/auth", "")}/inventory/${itemId}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
