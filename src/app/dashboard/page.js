@@ -19,7 +19,7 @@ export default function Dashboard() {
       return; // Exit if token is not found
     }
 
-    fetch("https://onlydevs-ims.onrender.com/api/inventory", {
+    fetch("http://localhost:5000/api/inventory", {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${token}`,  // Include token in Authorization header

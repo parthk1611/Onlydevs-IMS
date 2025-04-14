@@ -26,7 +26,7 @@ export default function InventoryPage() {
     }
 
     axios
-      .get("https://onlydevs-ims.onrender.com/api/inventory", {
+      .get("http://localhost:5000/api/inventory", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -48,7 +48,7 @@ export default function InventoryPage() {
   const handleAddItem = () => {
     const token = localStorage.getItem("token");
     axios
-      .post("https://onlydevs-ims.onrender.com/api/inventory", newItemData, {
+      .post("http://localhost:5000/api/inventory", newItemData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -120,8 +120,8 @@ export default function InventoryPage() {
                     className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
                     onClick={() => {
                       const token = localStorage.getItem("token");
-                          axios
-                        .delete(`https://onlydevs-ims.onrender.com/api/inventory/${item._id}`, {
+                      axios
+                        .delete(`http://localhost:5000/api/inventory/${item._id}`, {
                           headers: {
                             Authorization: `Bearer ${token}`,
                           },
@@ -331,7 +331,7 @@ export default function InventoryPage() {
                         onClick={() => {
                           const token = localStorage.getItem("token");
                           axios
-                            .put(`https://onlydevs-ims.onrender.com/api/inventory/${editItem._id}`, editedItemData, {
+                            .put(`http://localhost:5000/api/inventory/${editItem._id}`, editedItemData, {
                               headers: {
                                 Authorization: `Bearer ${token}`,
                               },

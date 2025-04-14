@@ -1,4 +1,4 @@
-export const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:5000/api/auth";
+export const API_URL = "http://localhost:5000/api/auth";
 
 // Login function
 export const loginUser = async (email, password) => {
@@ -22,7 +22,7 @@ export const registerUser = async (username, email, password) => {
 
 // Delete Inventory Item
 export const deleteItem = async (itemId, token) => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL?.replace("/auth", "")}/inventory/${itemId}`, {
+  const res = await fetch(`http://localhost:5000/api/inventory/${itemId}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
